@@ -31,14 +31,16 @@ const Navbar = () => {
 
         {/* Dropdown Menu for Mobile, Tablet, and Full Menu for Desktop */}
         <ul
-          className={`fixed top-0 left-0 h-full w-full bg-black bg-opacity-95 transform transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } md:relative md:transform-none md:bg-transparent md:flex md:w-auto md:space-x-6 lg:space-x-8 md:bg-opacity-0`}
+          className={`fixed top-0 left-0 h-full w-full bg-black bg-opacity-95 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            } md:relative md:transform-none md:bg-transparent md:flex md:w-auto md:space-x-6 lg:space-x-8 md:bg-opacity-0`}
         >
           <div className="flex flex-col items-center justify-center h-full md:h-auto space-y-6 md:space-y-0 md:flex-row md:space-x-6 lg:space-x-10">
             {['Home', 'Menu', 'About', 'Blog', 'Contact'].map((item) => (
               <li key={item} className="py-2 md:py-0">
-                <a href={`/${item.toLowerCase()}`} className="text-white hover:border-b-2 border-red-600 text-2xl md:text-lg">
+                <a
+                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                  className="text-white hover:border-b-2 border-red-600 text-2xl md:text-lg"
+                >
                   {item}
                 </a>
               </li>
@@ -88,12 +90,12 @@ const HeroSection = () => {
           </p>
           <div className="mt-8 flex justify-center space-x-4">
             <button className="px-6 py-3 text-white bg-red-500 rounded-lg font-medium hover:bg-red-800 drop-shadow-md"
-              onClick={()=>navigate('/reservation')}>
+              onClick={() => navigate('/reservation')}>
               Book A Table
             </button>
             <button className="px-6 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg font-medium hover:bg-gray-200 drop-shadow-md"
-              onClick={()=>navigate('/menu')}>
-                
+              onClick={() => navigate('/menu')}>
+
               Explore Menu
             </button>
           </div>

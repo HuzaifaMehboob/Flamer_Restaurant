@@ -1,50 +1,34 @@
 import React from 'react';
-import coffee from '../../../Assets/Images/familymeal.jpg'
+import coffee from '../../../Assets/Images/familymeal.jpg';
 
 const RestaurantInfo = () => {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="container mx-auto p-6 flex flex-col md:flex-row items-center">
-        {/* Image and Contact Info */}
-        <div className="relative w-full h-full   flex justify-center md:w-1/2">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 sm:px-8 lg:px-16">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 items-center">
+        
+        {/* Image Section */}
+        <div className="w-full flex justify-center">
           <img
             src={coffee}
             alt="Dish"
-            className="rounded-lg shadow-lg object-cover w-[100%] h-[80vh]"
+            className="rounded-lg shadow-lg object-cover w-full max-w-lg md:max-w-none md:h-[70vh] aspect-video"
           />
-          {/* Contact Info Overlay */}
-          {/* <div className="absolute bottom-5 right-7 bg-red-600 text-white p-6 rounded-lg shadow-lg transform translate-y-1/2">
-            <h3 className="text-base font-semibold flex-col justify-around align-center">Come and visit us</h3>
-            <p className="mt-2 text-sm py-1 px-3">
-              <span className='mr-2'>📞</span>  (414) 857 - 0107
-            </p>
-            <p className="mt-2 text-sm py-1 px-3">
-              <span className='mr-2'>✉️ </span>  happytummy@restaurant.com
-            </p>
-            <p className="mt-2 text-sm py-1 px-3">
-              <span className='mr-2'>📍 </span> 837 W. Marshall Lane Marshalltown<br/>
-            <p className="mt-2 text-sm  px-4">
-            , IA 50158, Los Angeles
-            </p>
-            </p>
-          </div> */}
         </div>
-
+        
         {/* Text Section */}
-        <div className="w-full md:w-[40%] mt-10 md:mt-0 md:ml-10  text-center md:text-left">
-          <h1 className="text-6xl font-bold text-gray-800">
+        <div className="w-full flex flex-col items-center md:items-start text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
             We provide 
-            <p className="text-red-600 italic">Healthy</p>
-            food for your 
-            <p className="text-red-600 italic">Family</p>
+            <span className="text-red-600 italic"> Healthy</span> food for your 
+            <span className="text-red-600 italic"> Family</span>
           </h1>
-          <p className="mt-6 text-gray-600 text-lg">
+          <p className="mt-6 text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed">
             Our story began with a vision to create a unique dining experience
             that merges fine dining, exceptional service, and a vibrant
             ambiance. Rooted in the city's rich culinary culture, we aim to
             honor our local roots while infusing a global palate.
           </p>
-          <p className="mt-4 text-gray-600 text-lg">
+          <p className="mt-4 text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed">
             At our place, we believe that dining is not just about food, but
             also about the overall experience. Our staff, renowned for their
             warmth and dedication, strives to make every visit an unforgettable
@@ -53,7 +37,7 @@ const RestaurantInfo = () => {
 
           {/* Button */}
           <div className="mt-8">
-            <button className="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-800 transition">
+            <button className="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-800 focus:outline-none focus:ring focus:ring-red-300 transition">
               Book A Table
             </button>
           </div>

@@ -8,7 +8,7 @@ import Blog from './Screens/Blog'
 import Reservation from './Screens/Reservation';
 export default function App() {
   return (
-    <div className="w-[100%] h-[100%] p-0 m-0 box-border">
+    <div className="w-[100%] h-[100%] overflow-x-hidden p-0 m-0 box-border">
         {/* <Navbar/> */}
         <Router>
         <Routes>

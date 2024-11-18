@@ -27,42 +27,45 @@ const BlogArticles = () => {
   ];
 
   return (
-    <section className="my-[20vh] bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center">
-          Our Blog <span className="text-red-600 italic text-5xl mx-2">&</span> Articles
+    <section className="my-16 bg-gray-50 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 text-center">
+          Our Blog <span className="text-red-600 italic text-4xl mx-2">&</span> Articles
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Large article card on the left */}
-          <div className="md:col-span-2 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out px-6 py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Large article card */}
+          <div className="lg:col-span-2 bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out">
             <img
               src={articles[0].image}
               alt={articles[0].title}
-              className="w-full h-56 object-cover rounded-t-lg" // Set height to 56 to make it shorter
+              className="w-full h-64 object-cover sm:h-72 lg:h-80"
             />
-            <div className="px-4 py-6">
-              <p className="text-sm text-gray-400 mb-2">{articles[0].date}</p>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-3">{articles[0].title}</h2>
-              <p className="text-gray-600 mb-4">{articles[0].description}</p>
-              <button className="bg-red-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300">
+            <div className="px-6 py-8">
+              <p className="text-sm text-gray-500 mb-2">{articles[0].date}</p>
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">{articles[0].title}</h2>
+              <p className="text-gray-600 line-clamp-3 mb-6">{articles[0].description}</p>
+              <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300">
                 Read More
               </button>
             </div>
           </div>
 
-          {/* Two smaller cards on the right */}
+          {/* Two smaller cards */}
           <div className="space-y-8">
-            {articles.slice(1).map(article => (
-              <div key={article.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out">
+            {articles.slice(1).map((article) => (
+              <div
+                key={article.id}
+                className="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out"
+              >
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-40 object-cover"
+                  className="w-full h-40 sm:h-48 object-cover"
                 />
-                <div className="p-4">
-                  <p className="text-sm text-gray-400 mb-2">{article.date}</p>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{article.title}</h3>
-                  <button className="bg-red-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300">
+                <div className="p-6">
+                  <p className="text-sm text-gray-500 mb-2">{article.date}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">{article.title}</h3>
+                  <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300">
                     Read More
                   </button>
                 </div>
